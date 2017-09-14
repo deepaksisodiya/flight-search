@@ -13,9 +13,15 @@ export default class SubHeader extends Component {
   };
 
   render() {
+    const { departDate, returnDate} = this.props;
+
     return (
       <div className="subHeader-container">
-        <h1>{this.getTitle()}</h1>
+        <p className="title">{this.getTitle()}</p>
+        <div className="date">
+          <p>Depart Date: {departDate}</p>
+          {returnDate && <p>Return Date: {returnDate}</p>}
+        </div>
       </div>
     );
   }
