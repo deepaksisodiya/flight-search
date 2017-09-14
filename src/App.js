@@ -13,7 +13,11 @@ class App extends Component {
 
         <div className="middle-container">
           <SearchForm />
-          <SubHeader/>
+          <SubHeader
+            originCity="Pune"
+            destinationCity="Delhi"
+            departDate="25/12/2017"
+          />
         </div>
 
       </div>
