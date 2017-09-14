@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Header, SearchForm } from './Components';
-import SubHeader from "./Components/SubHeader/index";
+import { Header, SearchForm, SubHeader, FlightDetails } from './Components';
 
 class App extends Component {
   render() {
@@ -13,12 +12,17 @@ class App extends Component {
 
         <div className="middle-container">
           <SearchForm />
-          <SubHeader
-            originCity="Pune"
-            destinationCity="Delhi"
-            departDate="25/12/2017"
-          />
+          <div className="okok">
+            <SubHeader
+              originCity="Pune"
+              destinationCity="Delhi"
+              departDate="25/12/2017"
+            />
+            <FlightDetails />
+          </div>
+
         </div>
+
 
       </div>
     );
