@@ -32,9 +32,14 @@ export default class SearchForm extends Component {
     });
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('data ', this.state);
+  };
+
   render () {
     return (
-      <form className="container">
+      <form onSubmit={this.handleSubmit} className="container">
         <div className="date-container">
           <DatePicker
             selected={this.state.datePicker}
@@ -59,11 +64,7 @@ export default class SearchForm extends Component {
           onChange={this.handleChange}
           placeholder="Enter Destination City"
         />
-
-        <button className="btn">Search</button>
-        <p>{this.state.originCity}</p>
-        <p>{this.state.destinationCity}</p>
-        <p>{this.state.startDate}</p>
+        <input className="btn" type="submit" value="Search" />
       </form>
     )
   }
