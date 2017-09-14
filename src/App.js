@@ -13,9 +13,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      originCity: 'Pune',
-      destinationCity: 'Delhi',
-      departDateObj: moment()
+      originCity: '',
+      destinationCity: '',
+      departDateObj: ''
     }
   }
 
