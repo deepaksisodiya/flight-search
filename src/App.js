@@ -4,6 +4,10 @@ import './App.css';
 
 import { Header, SearchForm, SubHeader, FlightDetails } from './Components';
 
+import moment from 'moment';
+
+import FlightDetailsContainer from './Container/FlightDetailsContainer';
+
 class App extends Component {
 
   constructor(props) {
@@ -11,22 +15,16 @@ class App extends Component {
     this.state = {
       originCity: 'Pune',
       destinationCity: 'Delhi',
-      departDate: '25/12/2017',
+      departDateObj: moment()
     }
   }
 
   onClickOnSearch = (data) => {
-    // format date
-    const departDate = data.departDate.format("Do MMM YYYY");
-
-    this.setState({
-      ...data,
-      departDate,
-    });
+    this.setState(data);
   };
 
   render() {
-    const { originCity, destinationCity, departDate} = this.state;
+    const { originCity, destinationCity, departDateObj } = this.state;
 
     return (
       <div>
@@ -38,44 +36,13 @@ class App extends Component {
             <SubHeader
               originCity={originCity}
               destinationCity={destinationCity}
-              departDate={departDate}
+              departDateObj={departDateObj}
             />
             <div className="flight-details-array">
-              <FlightDetails
-                price="9000"
-                isOneWay={true}
-                flightNumber="AI-202"
-                originCity="PNQ"
-                destinationCity="DEL"
-                departTime="10 AM"
-                arriveTime="2 PM"
-              />
-              <FlightDetails
-                price="9000"
-                isOneWay={true}
-                flightNumber="AI-202"
-                originCity="PNQ"
-                destinationCity="DEL"
-                departTime="10 AM"
-                arriveTime="2 PM"
-              />
-              <FlightDetails
-                price="9000"
-                isOneWay={true}
-                flightNumber="AI-202"
-                originCity="PNQ"
-                destinationCity="DEL"
-                departTime="10 AM"
-                arriveTime="2 PM"
-              />
-              <FlightDetails
-                price="9000"
-                isOneWay={true}
-                flightNumber="AI-202"
-                originCity="PNQ"
-                destinationCity="DEL"
-                departTime="10 AM"
-                arriveTime="2 PM"
+              <FlightDetailsContainer
+                originCity={originCity}
+                destinationCity={destinationCity}
+                departDateObj={departDateObj}
               />
             </div>
           </div>
