@@ -3,13 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 
 import { Header, SearchForm } from './Components';
+import SubHeader from "./Components/SubHeader/index";
 
 class App extends Component {
   render() {
     return (
       <div>
         <Header />
-        <SearchForm />
+
+        <div className="middle-container">
+          <SearchForm />
+          <SubHeader/>
+        </div>
+
       </div>
     );
   }
