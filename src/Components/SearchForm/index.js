@@ -60,6 +60,7 @@ export default class SearchForm extends Component {
           placeholder="Enter Destination City"
         />
 
+        <button className="btn">Search</button>
         <p>{this.state.originCity}</p>
         <p>{this.state.destinationCity}</p>
         <p>{this.state.startDate}</p>

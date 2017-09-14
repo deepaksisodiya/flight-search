@@ -1,5 +1,10 @@
 .flight-details-container {
   border: 1px solid black;
+  display: flex;
+}
+
+.flight-details-subContainer {
+  flex-grow: 1;
 }
 
 .flight-details-price {
@@ -10,4 +15,44 @@
 
 .flight-details-info {
   display: flex;
+}
+
+.rectangle {
+  border: 1px solid black;
+  width: 165px;
+  height: 150px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.book-flight-container {
+  border: 1px solid black;
+  margin: 10px;
+  flex-direction: column;
+  display: flex;
+}
+
+.btn-container {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.btn {
+  cursor: pointer;
+  background: #4CAF50;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.btn:hover {
+  background: #4ac24c;
 }
