@@ -10,11 +10,10 @@ export default class SearchForm extends Component {
 
   constructor(props) {
     super(props);
-    const date = moment();
     this.state = {
       originCity: '',
       destinationCity: '',
-      datePicker: '',
+      departDate: '',
     }
   }
 
@@ -28,13 +27,16 @@ export default class SearchForm extends Component {
 
   handleDatePicker = (date) => {
     this.setState({
-      datePicker:date,
+      departDate:date,
     });
   };
 
   handleSubmit = (event) => {
+    const { originCity, destinationCity, departDate } = this.state;
+    if (originCity && destinationCity && departDate) {
+      this.props.onClickOnSearch(this.state);
+    }
     event.preventDefault();
-    console.log('data ', this.state);
   };
 
   render () {
@@ -42,7 +44,7 @@ export default class SearchForm extends Component {
       <form onSubmit={this.handleSubmit} className="container">
         <div className="date-container">
           <DatePicker
-            selected={this.state.datePicker}
+            selected={this.state.departDate}
             onChange={this.handleDatePicker}
             placeholderText="Departure Date"
             className="date-picker"

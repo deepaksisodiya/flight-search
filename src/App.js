@@ -5,18 +5,34 @@ import './App.css';
 import { Header, SearchForm, SubHeader, FlightDetails } from './Components';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      originCity: 'Pune',
+      destinationCity: 'Delhi',
+      departDate: '25/12/2017',
+    }
+  }
+
+  onClickOnSearch = (data) => {
+    this.setState(data);
+  };
+
   render() {
+    const { originCity, destinationCity, departDate} = this.state;
+
     return (
       <div>
         <Header />
 
         <div className="middle-container">
-          <SearchForm />
+          <SearchForm onClickOnSearch={this.onClickOnSearch} />
           <div className="okok">
             <SubHeader
-              originCity="Pune"
-              destinationCity="Delhi"
-              departDate="25/12/2017"
+              originCity={originCity}
+              destinationCity={destinationCity}
+              departDate={departDate}
             />
             <div className="flight-details-array">
               <FlightDetails
