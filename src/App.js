@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Header } from './Components';
-import SearchForm from './Components/SearchForm';
+import { Header, SearchForm } from './Components';
 
 class App extends Component {
   render() {
