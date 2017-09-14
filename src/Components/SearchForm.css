@@ -1,0 +1,29 @@
+.form-input {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: large;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.date-picker {
+    font-size: large;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.date-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 1px solid black;
+}

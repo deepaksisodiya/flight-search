@@ -3,12 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 import { Header } from './Components';
+import SearchForm from './Components/SearchForm';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Header />
+        <SearchForm />
       </div>
     );
   }
