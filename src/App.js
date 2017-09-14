@@ -28,6 +28,33 @@ class App extends Component {
                 departTime="10 AM"
                 arriveTime="2 PM"
               />
+              <FlightDetails
+                price="9000"
+                isOneWay={true}
+                flightNumber="AI-202"
+                originCity="PNQ"
+                destinationCity="DEL"
+                departTime="10 AM"
+                arriveTime="2 PM"
+              />
+              <FlightDetails
+                price="9000"
+                isOneWay={true}
+                flightNumber="AI-202"
+                originCity="PNQ"
+                destinationCity="DEL"
+                departTime="10 AM"
+                arriveTime="2 PM"
+              />
+              <FlightDetails
+                price="9000"
+                isOneWay={true}
+                flightNumber="AI-202"
+                originCity="PNQ"
+                destinationCity="DEL"
+                departTime="10 AM"
+                arriveTime="2 PM"
+              />
             </div>
           </div>
 

@@ -20,13 +20,6 @@ export default class FlightDetails extends Component {
               departTime={departTime}
               arriveTime={arriveTime}
             />
-            <FlightSubInfo
-              flightNumber={flightNumber}
-              originCity={originCity}
-              destinationCity={destinationCity}
-              departTime={departTime}
-              arriveTime={arriveTime}
-            />
           </div>
         </div>
         <div className="book-flight-container">
