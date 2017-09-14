@@ -16,7 +16,13 @@ class App extends Component {
   }
 
   onClickOnSearch = (data) => {
-    this.setState(data);
+    // format date
+    const departDate = data.departDate.format("Do MMM YYYY");
+
+    this.setState({
+      ...data,
+      departDate,
+    });
   };
 
   render() {
