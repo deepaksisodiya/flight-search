@@ -1,0 +1,13 @@
+.flight-details-container {
+  border: 1px solid black;
+}
+
+.flight-details-price {
+  font-size: 30px;
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+.flight-details-info {
+  display: flex;
+}

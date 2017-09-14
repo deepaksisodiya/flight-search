@@ -18,7 +18,17 @@ class App extends Component {
               destinationCity="Delhi"
               departDate="25/12/2017"
             />
-            <FlightDetails />
+            <div className="flight-details-array">
+              <FlightDetails
+                price="9000"
+                isOneWay={true}
+                flightNumber="AI-202"
+                originCity="PNQ"
+                destinationCity="DEL"
+                departTime="10 AM"
+                arriveTime="2 PM"
+              />
+            </div>
           </div>
 
         </div>
