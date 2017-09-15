@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -7,6 +8,10 @@ import 'react-tabs/style/react-tabs.css';
 import './SearchForm.css';
 
 export default class SearchForm extends Component {
+  static propTypes = {
+    onChangeComplete: PropTypes.func.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.state = {

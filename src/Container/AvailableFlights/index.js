@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import { FlightDetails } from './../../Components';
@@ -6,6 +7,15 @@ import { FlightDetails } from './../../Components';
 import { oneWayJson, twoWayJson } from './../../json';
 
 export default class AvailableFlights extends Component {
+  static propTypes = {
+    originCity: PropTypes.string.isRequired,
+    destinationCity: PropTypes.string.isRequired,
+    departDateObj: PropTypes.string.isRequired,
+    returnDateObj: PropTypes.string.isRequired,
+    isOneWay: PropTypes.bool.isRequired,
+    sliderValue: PropTypes.number.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -18,8 +28,6 @@ export default class AvailableFlights extends Component {
   }
 
   getAvailableFlights = newProps => {
-    console.log('newProps ', newProps);
-
     const departDate = moment(newProps.departDateObj).format('DD/MM/YYYY');
     const returnDate = moment(newProps.returnDateObj).format('DD/MM/YYYY');
     let flightDetailsArr;
