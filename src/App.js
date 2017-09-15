@@ -21,11 +21,13 @@ class App extends Component {
   }
 
   onClickOnSearch = (data) => {
-    this.setState(data);
+    this.setState({
+      ...data,
+      sliderValue: null,
+    });
   };
 
   onChangeComplete = (sliderValue) => {
-    console.log('on complete app ', sliderValue);
     this.setState({sliderValue});
   };
 
