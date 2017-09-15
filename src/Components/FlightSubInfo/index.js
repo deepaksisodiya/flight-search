@@ -4,8 +4,8 @@ import './FlightSubInfo.css';
 export default class FlightSubInfo extends Component {
 
   getCityString = () => {
-    const { originCity, destinationCity } = this.props;
-    return `${originCity} > ${destinationCity}`;
+    const { originCityCode, destinationCityCode } = this.props;
+    return `${originCityCode} > ${originCityCode}`;
   };
 
   render() {
@@ -25,8 +25,8 @@ export default class FlightSubInfo extends Component {
 
 FlightSubInfo.PropTypes = {
   flightNumber: PropTypes.string.isRequired,
-  originCity: PropTypes.string.isRequired,
-  destinationCity: PropTypes.string.isRequired,
+  originCityCode: PropTypes.string.isRequired,
+  destinationCityCode: PropTypes.string.isRequired,
   departTime: PropTypes.string.isRequired,
   arriveTime: PropTypes.string.isRequired,
 };
