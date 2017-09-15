@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './SubHeader.css';
 
@@ -7,8 +8,8 @@ const SubHeader = props => {
     originCity,
     destinationCity,
     departDateObj,
-    isOneWay,
-    returnDateObj
+    returnDateObj,
+    isOneWay
   } = props;
 
   const renderTitle = () => {
@@ -47,7 +48,7 @@ const SubHeader = props => {
   );
 };
 
-SubHeader.PropTypes = {
+SubHeader.propTypes = {
   originCity: PropTypes.string.isRequired,
   destinationCity: PropTypes.string.isRequired,
   departDateObj: PropTypes.object.isRequired,

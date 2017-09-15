@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Slider from 'react-rangeslider';
 
 import 'react-rangeslider/lib/index.css';
 import './RangeSlider.css';
 
 export default class RangeSlider extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sliderValue: 0
-    };
-  }
+  static propTypes = {
+    onChangeComplete: PropTypes.func.isRequired
+  };
+
+  state = {
+    sliderValue: 0
+  };
 
   handleOnChange = value => {
     this.setState({

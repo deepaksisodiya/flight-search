@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import FlightSubDetails from '../FlightSubDetails';
 
@@ -51,7 +52,7 @@ const FlightDetails = props => {
   );
 };
 
-FlightDetails.PropTypes = {
+FlightDetails.propTypes = {
   price: PropTypes.string.isRequired,
   isOneWay: PropTypes.string.isRequired,
   originCityCode: PropTypes.string.isRequired,

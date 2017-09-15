@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './FlightSubDetails.css';
 
@@ -25,7 +26,7 @@ const FlightSubDetails = props => {
   );
 };
 
-FlightSubDetails.PropTypes = {
+FlightSubDetails.propTypes = {
   flightNumber: PropTypes.string.isRequired,
   originCityCode: PropTypes.string.isRequired,
   destinationCityCode: PropTypes.string.isRequired,
