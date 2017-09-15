@@ -56,11 +56,11 @@ export default class FlightDetailsContainer extends Component {
               key={index}
               price={obj.price}
               isOneWay={true}
-              flightNumber={obj.flightNumber}
+              gFlightNumber={obj.flightNumber}
               originCityCode={obj.originCityCode}
               destinationCityCode={obj.destinationCityCode}
-              departTime={obj.detaprtTime}
-              arriveTime={obj.arriveTime}
+              gDepartTime={obj.detaprtTime}
+              gArriveTime={obj.arriveTime}
             />
           )
 

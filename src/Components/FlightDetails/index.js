@@ -6,7 +6,7 @@ import FlightSubInfo from './../FlightSubInfo';
 export default class FlightDetails extends Component {
 
   render() {
-    const { price, originCityCode, destinationCityCode, departTime, arriveTime, flightNumber } = this.props;
+    const { price, originCityCode, destinationCityCode, gDepartTime, gArriveTime, gFlightNumber } = this.props;
 
     return (
       <div className="flight-details-container">
@@ -14,11 +14,11 @@ export default class FlightDetails extends Component {
           <p className="flight-details-price">Rs. {price}</p>
           <div className="flight-details-info">
             <FlightSubInfo
-              flightNumber={flightNumber}
+              flightNumber={gFlightNumber}
               originCityCode={originCityCode}
               destinationCityCode={destinationCityCode}
-              departTime={departTime}
-              arriveTime={arriveTime}
+              departTime={gDepartTime}
+              arriveTime={gArriveTime}
             />
           </div>
         </div>
@@ -40,7 +40,7 @@ FlightDetails.PropTypes = {
   isOneWay: PropTypes.string.isRequired,
   originCityCode: PropTypes.string.isRequired,
   destinationCityCode: PropTypes.string.isRequired,
-  departTime: PropTypes.string.isRequired,
-  arriveTime: PropTypes.string.isRequired,
-  flightNumber: PropTypes.string.isRequired,
+  gDepartTime: PropTypes.string.isRequired,
+  gArriveTime: PropTypes.string.isRequired,
+  gFlightNumber: PropTypes.string.isRequired,
 };
