@@ -1,6 +1,9 @@
 .middle-container {
   display: flex;
   flex-direction: row;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 25px;
 }
 
 .sub-header-available-flights-container {
@@ -10,11 +13,12 @@
 .available-flights {
   border: 1px solid #e2e3e6;
   background-color: #e2e3e6;
+  margin-top: 25px;
 }
 
 .search-form-slider-container {
-  border: 5px solid salmon;
   padding: 10px;
+  margin-right: 25px;
   background-color: #e2e3e6;
 }
 
