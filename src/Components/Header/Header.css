@@ -1,6 +1,6 @@
 .header-container {
   display: flex;
-  border: 1px solid black;
+  flex-direction: row;
   padding-left: 4vh;
   background-color: #e2e3e6;
   color: #212b35;
