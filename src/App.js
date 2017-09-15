@@ -60,6 +60,8 @@ class App extends Component {
                 originCity={originCity}
                 destinationCity={destinationCity}
                 departDateObj={departDateObj}
+                returnDateObj={returnDateObj}
+                isOneWay={isOneWay}
                 sliderValue={sliderValue}
               />
             </div>

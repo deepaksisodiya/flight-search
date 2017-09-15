@@ -12,6 +12,7 @@ export default class FlightDetailsContainer extends Component {
     super(props);
     this.state = {
       flightDetailsArr: [],
+      isOneWay: props.isOneWay,
     };
   }
 
@@ -20,6 +21,7 @@ export default class FlightDetailsContainer extends Component {
   }
 
   getAvailableFlights = (newProps) => {
+    console.log('newProps ', newProps);
     const date = moment(newProps.departDateObj).format('DD/MM/YYYY');
     let flightDetailsArr;
     if (newProps.sliderValue) {
@@ -45,27 +47,31 @@ export default class FlightDetailsContainer extends Component {
 
   };
 
-  render() {
+  renderFlightDetails = () => {
     const { flightDetailsArr } = this.state;
+
+    const arr = flightDetailsArr.map((obj, index) => {
+      return (
+        <FlightDetails
+          key={index}
+          price={obj.price}
+          isOneWay={true}
+          gFlightNumber={obj.flightNumber}
+          originCityCode={obj.originCityCode}
+          destinationCityCode={obj.destinationCityCode}
+          gDepartTime={obj.detaprtTime}
+          gArriveTime={obj.arriveTime}
+        />
+      )
+    });
+
+    return arr;
+  };
+
+  render() {
     return (
       <div>
-        {flightDetailsArr.map((obj, index) => {
-
-          return (
-            <FlightDetails
-              key={index}
-              price={obj.price}
-              isOneWay={true}
-              gFlightNumber={obj.flightNumber}
-              originCityCode={obj.originCityCode}
-              destinationCityCode={obj.destinationCityCode}
-              gDepartTime={obj.detaprtTime}
-              gArriveTime={obj.arriveTime}
-            />
-          )
-
-        })}
-
+        {this.renderFlightDetails()}
       </div>
     )
   }
