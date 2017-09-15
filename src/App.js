@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { Header, SearchForm, SubHeader, RangeSlider } from './Components';
-import AvailableFlights from './Container/AvailableFlights';
+import { Header, SubHeader } from './Components';
+import { AvailableFlights, RangeSlider, SearchForm } from './Container';
 
 import './App.css';
 

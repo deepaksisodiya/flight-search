@@ -1,57 +1,55 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import FlightSubDetails from '../FlightSubDetails';
 
 import './FlightDetails.css';
 
-export default class FlightDetails extends Component {
-  render() {
-    const {
-      price,
-      originCityCode,
-      destinationCityCode,
-      gDepartTime,
-      gArriveTime,
-      gFlightNumber,
-      rFlightNumber,
-      rDepartTime,
-      rArriveTime,
-      isOneWay
-    } = this.props;
+const FlightDetails = props => {
+  const {
+    price,
+    originCityCode,
+    destinationCityCode,
+    gDepartTime,
+    gArriveTime,
+    gFlightNumber,
+    rFlightNumber,
+    rDepartTime,
+    rArriveTime,
+    isOneWay
+  } = props;
 
-    return (
-      <div className="flight-details-container">
-        <div className="flight-details-subContainer">
-          <p className="flight-details-price">Rs. {price}</p>
-          <div className="flight-details-info">
+  return (
+    <div className="flight-details-container">
+      <div className="flight-details-subContainer">
+        <p className="flight-details-price">Rs. {price}</p>
+        <div className="flight-details-info">
+          <FlightSubDetails
+            flightNumber={gFlightNumber}
+            originCityCode={originCityCode}
+            destinationCityCode={destinationCityCode}
+            departTime={gDepartTime}
+            arriveTime={gArriveTime}
+          />
+          {!isOneWay && (
             <FlightSubDetails
-              flightNumber={gFlightNumber}
+              flightNumber={rFlightNumber}
               originCityCode={originCityCode}
               destinationCityCode={destinationCityCode}
-              departTime={gDepartTime}
-              arriveTime={gArriveTime}
+              departTime={rDepartTime}
+              arriveTime={rArriveTime}
             />
-            {!isOneWay && (
-              <FlightSubDetails
-                flightNumber={rFlightNumber}
-                originCityCode={originCityCode}
-                destinationCityCode={destinationCityCode}
-                departTime={rDepartTime}
-                arriveTime={rArriveTime}
-              />
-            )}
-          </div>
-        </div>
-        <div className="book-flight-container">
-          <div className="rectangle" />
-          <div className="btn-container">
-            <button className="btn">Book this flight</button>
-          </div>
+          )}
         </div>
       </div>
-    );
-  }
-}
+      <div className="book-flight-container">
+        <div className="rectangle" />
+        <div className="btn-container">
+          <button className="btn">Book this flight</button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 FlightDetails.PropTypes = {
   price: PropTypes.string.isRequired,
@@ -65,3 +63,5 @@ FlightDetails.PropTypes = {
   gFlightNumber: PropTypes.string.isRequired,
   rFlightNumber: PropTypes.string.isRequired
 };
+
+export default FlightDetails;
