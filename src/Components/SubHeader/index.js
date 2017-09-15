@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import './SubHeader.css';
 
 export default class SubHeader extends Component {
-
   renderTitle = () => {
     const { originCity, destinationCity, departDateObj, isOneWay } = this.props;
     if (departDateObj) {
@@ -18,7 +17,7 @@ export default class SubHeader extends Component {
   renderDepartDate = () => {
     const { departDateObj } = this.props;
     if (departDateObj) {
-      return <p>Depart: {departDateObj.format("Do MMM YYYY")}</p>
+      return <p>Depart: {departDateObj.format('Do MMM YYYY')}</p>;
     }
     return null;
   };
@@ -26,7 +25,7 @@ export default class SubHeader extends Component {
   renderReturnDate = () => {
     const { returnDateObj } = this.props;
     if (returnDateObj) {
-      return <p>Return: {returnDateObj.format("Do MMM YYYY")}</p>
+      return <p>Return: {returnDateObj.format('Do MMM YYYY')}</p>;
     }
     return null;
   };
@@ -49,9 +48,9 @@ SubHeader.PropTypes = {
   destinationCity: PropTypes.string.isRequired,
   departDateObj: PropTypes.object.isRequired,
   isOneWay: PropTypes.bool.isRequired,
-  returnDateObj: PropTypes.string,
+  returnDateObj: PropTypes.string
 };
 
 SubHeader.defaultProps = {
-  returnDateObj: '',
+  returnDateObj: ''
 };

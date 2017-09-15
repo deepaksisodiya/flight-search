@@ -10,48 +10,46 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 export default class SearchForm extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       isOneWay: true,
       tabIndex: 0,
 
-
       originCity: '',
       destinationCity: '',
       departDateObj: '',
-      returnDateObj: '',
-    }
+      returnDateObj: ''
+    };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const target = event.target;
     const name = target.name;
     this.setState({
-      [name]: target.value,
+      [name]: target.value
     });
   };
 
-  handleDatePicker = (date) => {
+  handleDatePicker = date => {
     this.setState({
-      departDateObj:date,
+      departDateObj: date
     });
   };
 
-  handleDatePickerReturn = (date) => {
+  handleDatePickerReturn = date => {
     this.setState({
-      returnDateObj:date,
+      returnDateObj: date
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     const {
       isOneWay,
       originCity,
       destinationCity,
       departDateObj,
-      returnDateObj,
+      returnDateObj
     } = this.state;
 
     const { onClickOnSearch } = this.props;
@@ -62,7 +60,7 @@ export default class SearchForm extends Component {
           originCity,
           destinationCity,
           departDateObj,
-          isOneWay,
+          isOneWay
         });
       }
     } else {
@@ -72,7 +70,7 @@ export default class SearchForm extends Component {
           destinationCity,
           departDateObj,
           returnDateObj,
-          isOneWay,
+          isOneWay
         });
       }
     }
@@ -80,7 +78,7 @@ export default class SearchForm extends Component {
     event.preventDefault();
   };
 
-  renderForm = (isOneWay) => {
+  renderForm = isOneWay => {
     return (
       <div className="container">
         <input
@@ -107,14 +105,16 @@ export default class SearchForm extends Component {
             className="date-picker"
           />
         </div>
-        { isOneWay === false && <div className="date-container">
-          <DatePicker
-            selected={this.state.returnDateObj}
-            onChange={this.handleDatePickerReturn}
-            placeholderText="Return Date"
-            className="date-picker"
-          />
-        </div>}
+        {isOneWay === false && (
+          <div className="date-container">
+            <DatePicker
+              selected={this.state.returnDateObj}
+              onChange={this.handleDatePickerReturn}
+              placeholderText="Return Date"
+              className="date-picker"
+            />
+          </div>
+        )}
         <button onClick={this.handleSubmit} className="btn">
           Search
         </button>
@@ -122,40 +122,28 @@ export default class SearchForm extends Component {
     );
   };
 
-  onSelectTab = (tabIndex) => {
-    this.setState((prevState) => {
+  onSelectTab = tabIndex => {
+    this.setState(prevState => {
       return {
         tabIndex,
         isOneWay: !prevState.isOneWay
-      }
+      };
     });
   };
 
-  render () {
+  render() {
     const { isOneWay } = this.state;
 
-
     return (
-
       <Tabs selectedIndex={this.state.tabIndex} onSelect={this.onSelectTab}>
         <TabList>
           <Tab>One Way</Tab>
           <Tab>Return</Tab>
         </TabList>
 
-        <TabPanel>
-
-          {this.renderForm(isOneWay)}
-
-        </TabPanel>
-        <TabPanel>
-          {this.renderForm(isOneWay)}
-        </TabPanel>
+        <TabPanel>{this.renderForm(isOneWay)}</TabPanel>
+        <TabPanel>{this.renderForm(isOneWay)}</TabPanel>
       </Tabs>
-
-
-
-    )
+    );
   }
-
 }

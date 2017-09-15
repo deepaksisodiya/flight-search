@@ -4,7 +4,6 @@ import './FlightDetails.css';
 import FlightSubInfo from './../FlightSubInfo';
 
 export default class FlightDetails extends Component {
-
   render() {
     const {
       price,
@@ -16,7 +15,7 @@ export default class FlightDetails extends Component {
       rFlightNumber,
       rDepartTime,
       rArriveTime,
-      isOneWay,
+      isOneWay
     } = this.props;
 
     console.log('props ', this.props.isOneWay);
@@ -33,26 +32,26 @@ export default class FlightDetails extends Component {
               departTime={gDepartTime}
               arriveTime={gArriveTime}
             />
-            {!isOneWay && <FlightSubInfo
-              flightNumber={rFlightNumber}
-              originCityCode={originCityCode}
-              destinationCityCode={destinationCityCode}
-              departTime={rDepartTime}
-              arriveTime={rArriveTime}
-            />}
+            {!isOneWay && (
+              <FlightSubInfo
+                flightNumber={rFlightNumber}
+                originCityCode={originCityCode}
+                destinationCityCode={destinationCityCode}
+                departTime={rDepartTime}
+                arriveTime={rArriveTime}
+              />
+            )}
           </div>
         </div>
         <div className="book-flight-container">
-          <div className="rectangle"></div>
+          <div className="rectangle" />
           <div className="btn-container">
             <button className="btn">Book this flight</button>
           </div>
         </div>
-
       </div>
-    )
+    );
   }
-
 }
 
 FlightDetails.PropTypes = {
@@ -65,5 +64,5 @@ FlightDetails.PropTypes = {
   rDetaprtTime: PropTypes.string.isRequired,
   rArriveTime: PropTypes.string.isRequired,
   gFlightNumber: PropTypes.string.isRequired,
-  rFlightNumber: PropTypes.string.isRequired,
+  rFlightNumber: PropTypes.string.isRequired
 };

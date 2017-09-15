@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Header, SearchForm, SubHeader, FlightDetails, RangeSlider } from './Components';
+import {
+  Header,
+  SearchForm,
+  SubHeader,
+  FlightDetails,
+  RangeSlider
+} from './Components';
 
 import moment from 'moment';
 
 import FlightDetailsContainer from './Container/FlightDetailsContainer';
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -18,24 +23,31 @@ class App extends Component {
       destinationCity: '',
       departDateObj: '',
       returnDateObj: '',
-      sliderValue: null,
-    }
+      sliderValue: null
+    };
   }
 
-  onClickOnSearch = (data) => {
+  onClickOnSearch = data => {
     this.setState({
       ...data,
-      sliderValue: null,
+      sliderValue: null
     });
   };
 
-  onChangeComplete = (sliderValue) => {
-    this.setState({sliderValue});
+  onChangeComplete = sliderValue => {
+    this.setState({ sliderValue });
   };
 
   render() {
     console.log('state app ', this.state);
-    const { originCity, destinationCity, departDateObj, returnDateObj, sliderValue, isOneWay } = this.state;
+    const {
+      originCity,
+      destinationCity,
+      departDateObj,
+      returnDateObj,
+      sliderValue,
+      isOneWay
+    } = this.state;
 
     return (
       <div>
@@ -66,9 +78,7 @@ class App extends Component {
               />
             </div>
           </div>
-
         </div>
-
       </div>
     );
   }

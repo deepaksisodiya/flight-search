@@ -7,11 +7,10 @@ import moment from 'moment';
 import { oneWayJson, twoWayJson } from './../../json';
 
 export default class FlightDetailsContainer extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      flightDetailsArr: [],
+      flightDetailsArr: []
     };
   }
 
@@ -19,8 +18,7 @@ export default class FlightDetailsContainer extends Component {
     this.getAvailableFlights(newProps);
   }
 
-  getAvailableFlights = (newProps) => {
-
+  getAvailableFlights = newProps => {
     console.log('newProps ', newProps);
 
     const departDate = moment(newProps.departDateObj).format('DD/MM/YYYY');
@@ -29,38 +27,41 @@ export default class FlightDetailsContainer extends Component {
 
     if (newProps.isOneWay) {
       if (newProps.sliderValue) {
-        flightDetailsArr = oneWayJson.filter((obj) => {
-          return (obj.originCity === newProps.originCity &&
-            obj.departDate ===  departDate &&
+        flightDetailsArr = oneWayJson.filter(obj => {
+          return (
+            obj.originCity === newProps.originCity &&
+            obj.departDate === departDate &&
             obj.destinationCity === newProps.destinationCity &&
             obj.price < newProps.sliderValue
           );
         });
       } else {
-        flightDetailsArr = oneWayJson.filter((obj) => {
-          return (obj.originCity === newProps.originCity &&
-            obj.departDate ===  departDate &&
+        flightDetailsArr = oneWayJson.filter(obj => {
+          return (
+            obj.originCity === newProps.originCity &&
+            obj.departDate === departDate &&
             obj.destinationCity === newProps.destinationCity
           );
         });
       }
     } else {
       if (newProps.sliderValue) {
-        flightDetailsArr = twoWayJson.filter((obj) => {
-          return (obj.originCity === newProps.originCity &&
+        flightDetailsArr = twoWayJson.filter(obj => {
+          return (
+            obj.originCity === newProps.originCity &&
             obj.destinationCity === newProps.destinationCity &&
-            obj.departDate ===  departDate &&
-            obj.returnDate ===  returnDate &&
+            obj.departDate === departDate &&
+            obj.returnDate === returnDate &&
             obj.price < newProps.sliderValue
           );
         });
       } else {
-        flightDetailsArr = twoWayJson.filter((obj) => {
+        flightDetailsArr = twoWayJson.filter(obj => {
           return (
             obj.originCity === newProps.originCity &&
             obj.destinationCity === newProps.destinationCity &&
-            obj.departDate ===  departDate &&
-            obj.returnDate ===  returnDate
+            obj.departDate === departDate &&
+            obj.returnDate === returnDate
           );
         });
       }
@@ -69,9 +70,8 @@ export default class FlightDetailsContainer extends Component {
     console.log('after filter flightDetailsArr ', flightDetailsArr);
 
     this.setState({
-      flightDetailsArr,
+      flightDetailsArr
     });
-
   };
 
   renderFlightDetails = () => {
@@ -96,7 +96,7 @@ export default class FlightDetailsContainer extends Component {
             gDepartTime={obj.detaprtTime}
             gArriveTime={obj.arriveTime}
           />
-        )
+        );
       });
     } else {
       arr = flightDetailsArr.map((obj, index) => {
@@ -114,7 +114,7 @@ export default class FlightDetailsContainer extends Component {
             rDetaprtTime={obj.rDetaprtTime}
             rArriveTime={obj.rArriveTime}
           />
-        )
+        );
       });
     }
 
@@ -122,11 +122,6 @@ export default class FlightDetailsContainer extends Component {
   };
 
   render() {
-    return (
-      <div>
-        {this.renderFlightDetails()}
-      </div>
-    )
+    return <div>{this.renderFlightDetails()}</div>;
   }
-
 }

@@ -3,20 +3,19 @@ import './RangeSlider.css';
 
 import Slider from 'react-rangeslider';
 
-import 'react-rangeslider/lib/index.css'
+import 'react-rangeslider/lib/index.css';
 
 export default class RangeSlider extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      sliderValue: 0,
-    }
+      sliderValue: 0
+    };
   }
 
-  handleOnChange = (value) => {
+  handleOnChange = value => {
     this.setState({
-      sliderValue: value,
+      sliderValue: value
     });
   };
 
@@ -45,7 +44,6 @@ export default class RangeSlider extends Component {
           onChangeComplete={this.onChangeComplete}
         />
       </div>
-    )
+    );
   }
-
 }

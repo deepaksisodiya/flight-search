@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import './FlightSubInfo.css';
 
 export default class FlightSubInfo extends Component {
-
   getCityString = () => {
     const { originCityCode, destinationCityCode } = this.props;
     return `${originCityCode} > ${originCityCode}`;
@@ -18,9 +17,8 @@ export default class FlightSubInfo extends Component {
         <p>Depart: {departTime}</p>
         <p>Arrive: {arriveTime}</p>
       </div>
-    )
+    );
   }
-
 }
 
 FlightSubInfo.PropTypes = {
@@ -28,5 +26,5 @@ FlightSubInfo.PropTypes = {
   originCityCode: PropTypes.string.isRequired,
   destinationCityCode: PropTypes.string.isRequired,
   departTime: PropTypes.string.isRequired,
-  arriveTime: PropTypes.string.isRequired,
+  arriveTime: PropTypes.string.isRequired
 };

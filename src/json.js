@@ -8,7 +8,7 @@ const oneWayJson = [
     destinationCityCode: 'DEL',
     departDate: '20/09/2017',
     detaprtTime: '3 PM',
-    arriveTime: '6 PM',
+    arriveTime: '6 PM'
   },
   {
     flightNumber: 'AI-203',
@@ -19,7 +19,7 @@ const oneWayJson = [
     destinationCityCode: 'DEL',
     departDate: '20/09/2017',
     detaprtTime: '1 PM',
-    arriveTime: '5 PM',
+    arriveTime: '5 PM'
   },
   {
     flightNumber: 'AI-204',
@@ -30,7 +30,7 @@ const oneWayJson = [
     destinationCityCode: 'DEL',
     departDate: '20/09/2017',
     detaprtTime: '10 AM',
-    arriveTime: '4 PM',
+    arriveTime: '4 PM'
   }
 ];
 
@@ -49,7 +49,7 @@ const twoWayJson = [
     rDetaprtTime: '4 PM',
     rArriveTime: '11 PM',
     originCityCode: 'PNQ',
-    destinationCityCode: 'DEL',
+    destinationCityCode: 'DEL'
   },
   {
     price: 15000,
@@ -65,7 +65,7 @@ const twoWayJson = [
     rDetaprtTime: '5 PM',
     rArriveTime: '8 PM',
     originCityCode: 'PNQ',
-    destinationCityCode: 'DEL',
+    destinationCityCode: 'DEL'
   },
   {
     price: 16000,
@@ -81,11 +81,8 @@ const twoWayJson = [
     rDetaprtTime: '5 PM',
     rArriveTime: '10 PM',
     originCityCode: 'PNQ',
-    destinationCityCode: 'DEL',
+    destinationCityCode: 'DEL'
   }
 ];
 
-export {
-  oneWayJson,
-  twoWayJson,
-};
+export { oneWayJson, twoWayJson };
