@@ -12,16 +12,16 @@ const FlightSubDetails = props => {
     destinationCityCode
   } = props;
 
-  const getCityString = () => {
+  const renderCity = () => {
     return `${originCityCode} > ${destinationCityCode}`;
   };
 
   return (
-    <div className="flight-sub-info-container">
+    <div className="flight-sub-details-container">
       <p>{flightNumber}</p>
-      <p>{getCityString()}</p>
-      <p>Depart: {departTime}</p>
-      <p>Arrive: {arriveTime}</p>
+      <p className="flight-sub-details-item">{renderCity()}</p>
+      <p className="flight-sub-details-item">Depart: {departTime}</p>
+      <p className="flight-sub-details-item time">Arrive: {arriveTime}</p>
     </div>
   );
 };

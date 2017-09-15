@@ -1,4 +1,13 @@
-.flight-sub-info-container {
+.flight-sub-details-container {
   border: 1px solid black;
   flex-grow: 2;
+  padding-left: 32px;
+}
+
+.flight-sub-details-item {
+  font-size: 20px;
+}
+
+.time {
+  line-height: 0px;
 }
