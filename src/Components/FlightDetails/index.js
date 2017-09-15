@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import FlightSubInfo from './../FlightSubInfo';
+import FlightSubDetails from '../FlightSubDetails';
 
 import './FlightDetails.css';
 
@@ -24,7 +24,7 @@ export default class FlightDetails extends Component {
         <div className="flight-details-subContainer">
           <p className="flight-details-price">Rs. {price}</p>
           <div className="flight-details-info">
-            <FlightSubInfo
+            <FlightSubDetails
               flightNumber={gFlightNumber}
               originCityCode={originCityCode}
               destinationCityCode={destinationCityCode}
@@ -32,7 +32,7 @@ export default class FlightDetails extends Component {
               arriveTime={gArriveTime}
             />
             {!isOneWay && (
-              <FlightSubInfo
+              <FlightSubDetails
                 flightNumber={rFlightNumber}
                 originCityCode={originCityCode}
                 destinationCityCode={destinationCityCode}

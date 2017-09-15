@@ -5,7 +5,7 @@ import { FlightDetails } from './../../Components';
 
 import { oneWayJson, twoWayJson } from './../../json';
 
-export default class FlightDetailsContainer extends Component {
+export default class AvailableFlights extends Component {
   constructor(props) {
     super(props);
     this.state = {

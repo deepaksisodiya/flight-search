@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Header, SearchForm, SubHeader, RangeSlider } from './Components';
-import FlightDetailsContainer from './Container/FlightDetailsContainer';
+import AvailableFlights from './Container/AvailableFlights';
 
 import './App.css';
 
@@ -42,7 +42,6 @@ class App extends Component {
     return (
       <div>
         <Header />
-
         <div className="middle-container">
           <div className="search-form-slider-container">
             <SearchForm onClickOnSearch={this.onClickOnSearch} />
@@ -58,7 +57,7 @@ class App extends Component {
               isOneWay={isOneWay}
             />
             <div className="flight-details-array">
-              <FlightDetailsContainer
+              <AvailableFlights
                 originCity={originCity}
                 destinationCity={destinationCity}
                 departDateObj={departDateObj}
