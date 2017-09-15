@@ -1,10 +1,17 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import './SubHeader.css';
 
-export default class SubHeader extends Component {
-  renderTitle = () => {
-    const { originCity, destinationCity, departDateObj, isOneWay } = this.props;
+const SubHeader = props => {
+  const {
+    originCity,
+    destinationCity,
+    departDateObj,
+    isOneWay,
+    returnDateObj
+  } = props;
+
+  const renderTitle = () => {
     if (departDateObj) {
       if (!isOneWay) {
         return `${originCity} > ${destinationCity} > ${originCity}`;
@@ -15,34 +22,30 @@ export default class SubHeader extends Component {
     return null;
   };
 
-  renderDepartDate = () => {
-    const { departDateObj } = this.props;
+  const renderDepartDate = () => {
     if (departDateObj) {
       return <p>Depart: {departDateObj.format('Do MMM YYYY')}</p>;
     }
     return null;
   };
 
-  renderReturnDate = () => {
-    const { returnDateObj } = this.props;
+  const renderReturnDate = () => {
     if (returnDateObj) {
       return <p>Return: {returnDateObj.format('Do MMM YYYY')}</p>;
     }
     return null;
   };
 
-  render() {
-    return (
-      <div className="subHeader-container">
-        <p className="title">{this.renderTitle()}</p>
-        <div className="date">
-          {this.renderDepartDate()}
-          {this.renderReturnDate()}
-        </div>
+  return (
+    <div className="subHeader-container">
+      <p className="title">{renderTitle()}</p>
+      <div className="date">
+        {renderDepartDate()}
+        {renderReturnDate()}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 SubHeader.PropTypes = {
   originCity: PropTypes.string.isRequired,
@@ -55,3 +58,5 @@ SubHeader.PropTypes = {
 SubHeader.defaultProps = {
   returnDateObj: ''
 };
+
+export default SubHeader;

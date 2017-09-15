@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 import './Header.css';
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div className="Header-container">
-        <h1>Flight Search Engine</h1>
-      </div>
-    );
-  }
-}
+const Header = () => {
+  return (
+    <div className="Header-container">
+      <h1>Flight Search Engine</h1>
+    </div>
+  );
+};
+
+export default Header;
