@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Header, SearchForm, SubHeader, FlightDetails } from './Components';
+import { Header, SearchForm, SubHeader, FlightDetails, RangeSlider } from './Components';
 
 import moment from 'moment';
 
@@ -31,7 +31,11 @@ class App extends Component {
         <Header />
 
         <div className="middle-container">
-          <SearchForm onClickOnSearch={this.onClickOnSearch} />
+          <div className="search-form-slider-container">
+            <SearchForm onClickOnSearch={this.onClickOnSearch} />
+            <RangeSlider />
+          </div>
+
           <div className="okok">
             <SubHeader
               originCity={originCity}

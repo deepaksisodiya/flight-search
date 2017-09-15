@@ -19,9 +19,14 @@
 }
 
 .container {
-  width: 292px;
+  width: 237px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 20px;
+}
+
+.search-form-slider-container {
+  border: 1px solid salmon;
+  padding: 10px;
 }
