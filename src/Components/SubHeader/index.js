@@ -23,16 +23,20 @@ const SubHeader = props => {
     return null;
   };
 
+  const formatDate = dateObj => {
+    return dateObj.format('Do MMM YYYY');
+  };
+
   const renderDepartDate = () => {
     if (departDateObj) {
-      return <p>Depart: {departDateObj.format('Do MMM YYYY')}</p>;
+      return <p>Depart: {formatDate(departDateObj)}</p>;
     }
     return null;
   };
 
   const renderReturnDate = () => {
-    if (returnDateObj) {
-      return <p>Return: {returnDateObj.format('Do MMM YYYY')}</p>;
+    if (!isOneWay) {
+      return <p>Return: {formatDate(returnDateObj)}</p>;
     }
     return null;
   };

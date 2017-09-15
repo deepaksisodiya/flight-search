@@ -38,6 +38,7 @@
   flex-direction: column;
   align-items: center;
   margin: 10px;
+  padding-right: 12px;
 }
 
 .btn-container {
