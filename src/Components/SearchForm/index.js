@@ -6,11 +6,18 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import './SearchForm.css';
 
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
 export default class SearchForm extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      isOneWay: true,
+      tabIndex: 0,
+
+
       originCity: '',
       destinationCity: '',
       departDateObj: '',
@@ -39,9 +46,9 @@ export default class SearchForm extends Component {
     event.preventDefault();
   };
 
-  render () {
+  renderForm = (isOneWay) => {
     return (
-      <form onSubmit={this.handleSubmit} className="container">
+      <div className="container">
         <div className="date-container">
           <DatePicker
             selected={this.state.departDateObj}
@@ -50,6 +57,14 @@ export default class SearchForm extends Component {
             className="date-picker"
           />
         </div>
+        { isOneWay === false && <div className="date-container">
+          <DatePicker
+            selected={this.state.departDateObj}
+            onChange={this.handleDatePicker}
+            placeholderText="Departure Date"
+            className="date-picker"
+          />
+        </div>}
         <input
           className="form-input"
           name="originCity"
@@ -66,8 +81,46 @@ export default class SearchForm extends Component {
           onChange={this.handleChange}
           placeholder="Enter Destination City"
         />
-        <input className="btn" type="submit" value="Search" />
-      </form>
+        <button onClick={this.handleSubmit} className="btn">
+          Search
+        </button>
+      </div>
+    );
+  };
+
+  onSelectTab = (tabIndex) => {
+    this.setState((prevState) => {
+      return {
+        tabIndex,
+        isOneWay: !prevState.isOneWay
+      }
+    });
+  };
+
+  render () {
+    const { isOneWay } = this.state;
+
+
+    return (
+
+      <Tabs selectedIndex={this.state.tabIndex} onSelect={this.onSelectTab}>
+        <TabList>
+          <Tab>One Way</Tab>
+          <Tab>Return</Tab>
+        </TabList>
+
+        <TabPanel>
+
+          {this.renderForm(isOneWay)}
+
+        </TabPanel>
+        <TabPanel>
+          {this.renderForm(isOneWay)}
+        </TabPanel>
+      </Tabs>
+
+
+
     )
   }
 
