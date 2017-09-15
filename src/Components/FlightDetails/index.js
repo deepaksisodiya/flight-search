@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import './FlightDetails.css';
 
 import FlightSubInfo from './../FlightSubInfo';
+
+import './FlightDetails.css';
 
 export default class FlightDetails extends Component {
   render() {
@@ -17,8 +18,6 @@ export default class FlightDetails extends Component {
       rArriveTime,
       isOneWay
     } = this.props;
-
-    console.log('props ', this.props.isOneWay);
 
     return (
       <div className="flight-details-container">

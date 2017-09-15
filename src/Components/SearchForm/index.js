@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
-import moment from 'moment';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import 'react-datepicker/dist/react-datepicker.css';
-
-import './SearchForm.css';
-
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import './SearchForm.css';
 
 export default class SearchForm extends Component {
   constructor(props) {

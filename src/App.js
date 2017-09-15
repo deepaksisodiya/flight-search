@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-import {
-  Header,
-  SearchForm,
-  SubHeader,
-  FlightDetails,
-  RangeSlider
-} from './Components';
-
-import moment from 'moment';
-
+import { Header, SearchForm, SubHeader, RangeSlider } from './Components';
 import FlightDetailsContainer from './Container/FlightDetailsContainer';
+
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +30,6 @@ class App extends Component {
   };
 
   render() {
-    console.log('state app ', this.state);
     const {
       originCity,
       destinationCity,
@@ -85,13 +75,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-<div className="App-header">
-  <img src={logo} className="App-logo" alt="logo" />
-  <h2>Welcome to React</h2>
-</div>
-<p className="App-intro">
-  To get started, edit <code>src/App.js</code> and save to reload.
-</p>
- */

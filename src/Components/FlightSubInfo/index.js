@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+
 import './FlightSubInfo.css';
 
 export default class FlightSubInfo extends Component {
   getCityString = () => {
     const { originCityCode, destinationCityCode } = this.props;
-    return `${originCityCode} > ${originCityCode}`;
+    return `${originCityCode} > ${destinationCityCode}`;
   };
 
   render() {

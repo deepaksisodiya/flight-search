@@ -1,9 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import './RangeSlider.css';
-
+import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 
 import 'react-rangeslider/lib/index.css';
+import './RangeSlider.css';
 
 export default class RangeSlider extends Component {
   constructor(props) {

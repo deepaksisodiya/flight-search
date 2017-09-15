@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 import { FlightDetails } from './../../Components';
-
-import moment from 'moment';
 
 import { oneWayJson, twoWayJson } from './../../json';
 
@@ -67,8 +66,6 @@ export default class FlightDetailsContainer extends Component {
       }
     }
 
-    console.log('after filter flightDetailsArr ', flightDetailsArr);
-
     this.setState({
       flightDetailsArr
     });
@@ -76,12 +73,7 @@ export default class FlightDetailsContainer extends Component {
 
   renderFlightDetails = () => {
     const { flightDetailsArr } = this.state;
-
-    console.log(' flightDetailsArr ', flightDetailsArr);
-
     let arr;
-
-    console.log('render flight details ', this.props.isOneWay);
 
     if (this.props.isOneWay) {
       arr = flightDetailsArr.map((obj, index) => {
