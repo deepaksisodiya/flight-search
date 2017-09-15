@@ -1,10 +1,12 @@
 .flight-details-container {
   display: flex;
+  flex-direction: row;
   background-color: white;
   margin: 30px;
+  border-radius: 3px;
 }
 
-.flight-details-subContainer {
+.flight-sub-details-price-container {
   flex-grow: 1;
 }
 
@@ -16,8 +18,9 @@
   color: #d83d05;
 }
 
-.flight-details-info {
+.flight-sub-details {
   display: flex;
+  flex-direction: row;
 }
 
 .rectangle {
@@ -31,31 +34,13 @@
 }
 
 .book-flight-container {
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   margin: 10px;
-  flex-direction: column;
-  display: flex;
 }
 
 .btn-container {
   margin-left: 8px;
   margin-right: 8px;
-}
-
-.btn {
-  cursor: pointer;
-  background: #d83d05;
-  border-radius: 4px;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  border: none;
-}
-
-button:focus {
-  outline: 0;
-}
-
-.btn:hover {
-  background: #d8000f;
 }

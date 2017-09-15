@@ -47,7 +47,7 @@ class App extends Component {
             <SearchForm onClickOnSearch={this.onClickOnSearch} />
             <RangeSlider onChangeComplete={this.onChangeComplete} />
           </div>
-          <div className="okok">
+          <div className="sub-header-available-flights-container">
             <SubHeader
               originCity={originCity}
               destinationCity={destinationCity}

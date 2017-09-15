@@ -15,20 +15,14 @@
 
 .date-container {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
 }
 
 .search-form-container {
-  width: 237px;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  width: 237px;
   padding: 20px;
   background-color: #f9fafb;
-}
-
-.search-form-slider-container {
-  border: 1px solid salmon;
-  padding: 10px;
-  background-color: #e2e3e6;
 }

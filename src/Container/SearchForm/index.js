@@ -18,8 +18,8 @@ export default class SearchForm extends Component {
       isOneWay: true,
       tabIndex: 0,
 
-      originCity: '',
-      destinationCity: '',
+      originCity: 'Pune',
+      destinationCity: 'Delhi',
       departDateObj: '',
       returnDateObj: ''
     };

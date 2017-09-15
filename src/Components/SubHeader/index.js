@@ -39,8 +39,8 @@ const SubHeader = props => {
 
   return (
     <div className="sub-header-container">
-      <p className="title">{renderTitle()}</p>
-      <div className="date">
+      <p className="sub-header-title">{renderTitle()}</p>
+      <div className="sub-header-date">
         {renderDepartDate()}
         {renderReturnDate()}
       </div>

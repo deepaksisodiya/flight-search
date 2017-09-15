@@ -1,14 +1,37 @@
 .middle-container {
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
 }
 
-.okok {
+.sub-header-available-flights-container {
   width: 100%;
 }
 
 .available-flights {
-  border: 1px solid black;
+  border: 1px solid #e2e3e6;
   background-color: #e2e3e6;
+}
+
+.search-form-slider-container {
+  border: 5px solid salmon;
+  padding: 10px;
+  background-color: #e2e3e6;
+}
+
+.btn {
+  cursor: pointer;
+  background: #d83d05;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.btn:hover {
+  background: #d8000f;
 }

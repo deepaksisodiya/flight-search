@@ -21,7 +21,9 @@ const FlightSubDetails = props => {
       <p className="flight-number">{flightNumber}</p>
       <p className="flight-sub-details-item">{renderCity()}</p>
       <p className="flight-sub-details-item">Depart: {departTime}</p>
-      <p className="flight-sub-details-item time">Arrive: {arriveTime}</p>
+      <p className="flight-sub-details-item arrive-time">
+        Arrive: {arriveTime}
+      </p>
     </div>
   );
 };

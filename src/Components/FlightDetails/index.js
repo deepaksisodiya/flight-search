@@ -21,9 +21,9 @@ const FlightDetails = props => {
 
   return (
     <div className="flight-details-container">
-      <div className="flight-details-subContainer">
+      <div className="flight-sub-details-price-container">
         <p className="flight-details-price">Rs. {price}</p>
-        <div className="flight-details-info">
+        <div className="flight-sub-details">
           <FlightSubDetails
             flightNumber={gFlightNumber}
             originCityCode={originCityCode}
