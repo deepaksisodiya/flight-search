@@ -20,6 +20,10 @@ export default class RangeSlider extends Component {
     });
   };
 
+  onChangeComplete = () => {
+    this.props.onChangeComplete(this.state.sliderValue);
+  };
+
   render() {
     const { sliderValue } = this.state;
 
@@ -38,6 +42,7 @@ export default class RangeSlider extends Component {
           min={0}
           max={10000}
           step={100}
+          onChangeComplete={this.onChangeComplete}
         />
       </div>
     )

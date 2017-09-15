@@ -21,27 +21,39 @@ export default class FlightDetailsContainer extends Component {
 
   getAvailableFlights = (newProps) => {
     const date = moment(newProps.departDateObj).format('DD/MM/YYYY');
-    const flightDetailsArr = oneWayJson.filter((obj) => {
-      return (obj.originCity === newProps.originCity &&
-        obj.departDate ===  date &&
-        obj.destinationCity === newProps.destinationCity
-      );
-    });
+    let flightDetailsArr;
+    if (newProps.sliderValue) {
+      flightDetailsArr = oneWayJson.filter((obj) => {
+        return (obj.originCity === newProps.originCity &&
+          obj.departDate ===  date &&
+          obj.destinationCity === newProps.destinationCity &&
+          obj.price < newProps.sliderValue
+        );
+      });
+    } else {
+      flightDetailsArr = oneWayJson.filter((obj) => {
+        return (obj.originCity === newProps.originCity &&
+          obj.departDate ===  date &&
+          obj.destinationCity === newProps.destinationCity
+        );
+      });
+    }
 
     this.setState({
       flightDetailsArr,
     });
+
   };
 
   render() {
-    console.log('flightDetailsArr ', this.state.flightDetailsArr);
     const { flightDetailsArr } = this.state;
     return (
       <div>
-        {flightDetailsArr.map((obj) => {
+        {flightDetailsArr.map((obj, index) => {
 
           return (
             <FlightDetails
+              key={index}
               price={obj.price}
               isOneWay={true}
               flightNumber={obj.flightNumber}

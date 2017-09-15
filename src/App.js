@@ -15,7 +15,8 @@ class App extends Component {
     this.state = {
       originCity: '',
       destinationCity: '',
-      departDateObj: ''
+      departDateObj: '',
+      sliderValue: null,
     }
   }
 
@@ -23,8 +24,13 @@ class App extends Component {
     this.setState(data);
   };
 
+  onChangeComplete = (sliderValue) => {
+    console.log('on complete app ', sliderValue);
+    this.setState({sliderValue});
+  };
+
   render() {
-    const { originCity, destinationCity, departDateObj } = this.state;
+    const { originCity, destinationCity, departDateObj, sliderValue } = this.state;
 
     return (
       <div>
@@ -33,7 +39,7 @@ class App extends Component {
         <div className="middle-container">
           <div className="search-form-slider-container">
             <SearchForm onClickOnSearch={this.onClickOnSearch} />
-            <RangeSlider />
+            <RangeSlider onChangeComplete={this.onChangeComplete} />
           </div>
 
           <div className="okok">
@@ -47,6 +53,7 @@ class App extends Component {
                 originCity={originCity}
                 destinationCity={destinationCity}
                 departDateObj={departDateObj}
+                sliderValue={sliderValue}
               />
             </div>
           </div>
