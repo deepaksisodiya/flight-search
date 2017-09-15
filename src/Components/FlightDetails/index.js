@@ -34,8 +34,8 @@ const FlightDetails = props => {
           {!isOneWay && (
             <FlightSubDetails
               flightNumber={rFlightNumber}
-              originCityCode={originCityCode}
-              destinationCityCode={destinationCityCode}
+              originCityCode={destinationCityCode}
+              destinationCityCode={originCityCode}
               departTime={rDepartTime}
               arriveTime={rArriveTime}
             />
@@ -53,16 +53,22 @@ const FlightDetails = props => {
 };
 
 FlightDetails.propTypes = {
-  price: PropTypes.string.isRequired,
-  isOneWay: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  isOneWay: PropTypes.bool.isRequired,
   originCityCode: PropTypes.string.isRequired,
   destinationCityCode: PropTypes.string.isRequired,
   gDepartTime: PropTypes.string.isRequired,
   gArriveTime: PropTypes.string.isRequired,
-  rDetaprtTime: PropTypes.string.isRequired,
-  rArriveTime: PropTypes.string.isRequired,
   gFlightNumber: PropTypes.string.isRequired,
-  rFlightNumber: PropTypes.string.isRequired
+  rFlightNumber: PropTypes.string,
+  rArriveTime: PropTypes.string,
+  rDetaprtTime: PropTypes.string
+};
+
+FlightSubDetails.defaultProps = {
+  rDetaprtTime: '',
+  rArriveTime: '',
+  rFlightNumber: ''
 };
 
 export default FlightDetails;

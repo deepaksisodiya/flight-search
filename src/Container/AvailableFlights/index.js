@@ -10,10 +10,16 @@ export default class AvailableFlights extends Component {
   static propTypes = {
     originCity: PropTypes.string.isRequired,
     destinationCity: PropTypes.string.isRequired,
-    departDateObj: PropTypes.string.isRequired,
-    returnDateObj: PropTypes.string.isRequired,
     isOneWay: PropTypes.bool.isRequired,
-    sliderValue: PropTypes.number.isRequired
+    sliderValue: PropTypes.number,
+    returnDateObj: PropTypes.object,
+    departDateObj: PropTypes.object
+  };
+
+  static defaultProps = {
+    departDateObj: null,
+    returnDateObj: null,
+    sliderValue: null
   };
 
   constructor(props) {
@@ -109,9 +115,9 @@ export default class AvailableFlights extends Component {
             rFlightNumber={obj.rFlightNumber}
             originCityCode={obj.originCityCode}
             destinationCityCode={obj.destinationCityCode}
-            gDepartTime={obj.gDetaprtTime}
+            gDepartTime={obj.gDepartTime}
             gArriveTime={obj.gArriveTime}
-            rDetaprtTime={obj.rDetaprtTime}
+            rDepartTime={obj.rDepartTime}
             rArriveTime={obj.rArriveTime}
           />
         );

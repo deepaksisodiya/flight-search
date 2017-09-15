@@ -9,7 +9,7 @@ import './SearchForm.css';
 
 export default class SearchForm extends Component {
   static propTypes = {
-    onChangeComplete: PropTypes.func.isRequired
+    onClickOnSearch: PropTypes.func.isRequired
   };
 
   constructor(props) {

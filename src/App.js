@@ -12,8 +12,8 @@ class App extends Component {
       isOneWay: true,
       originCity: '',
       destinationCity: '',
-      departDateObj: '',
-      returnDateObj: '',
+      departDateObj: null,
+      returnDateObj: null,
       sliderValue: null
     };
   }

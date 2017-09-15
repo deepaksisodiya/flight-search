@@ -51,13 +51,14 @@ const SubHeader = props => {
 SubHeader.propTypes = {
   originCity: PropTypes.string.isRequired,
   destinationCity: PropTypes.string.isRequired,
-  departDateObj: PropTypes.object.isRequired,
   isOneWay: PropTypes.bool.isRequired,
-  returnDateObj: PropTypes.string
+  departDateObj: PropTypes.object,
+  returnDateObj: PropTypes.object
 };
 
 SubHeader.defaultProps = {
-  returnDateObj: ''
+  returnDateObj: null,
+  departDateObj: null
 };
 
 export default SubHeader;
