@@ -25,9 +25,19 @@ export default class RangeSlider extends Component {
 
     return (
       <div className="slider-container">
+        <p>Refine Flight Search</p>
+
+        <div className="slider-label">
+          <span>0</span>
+          <span>10000</span>
+        </div>
+
         <Slider
           value={sliderValue}
           onChange={this.handleOnChange}
+          min={0}
+          max={10000}
+          step={100}
         />
       </div>
     )
