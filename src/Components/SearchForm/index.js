@@ -46,10 +46,37 @@ export default class SearchForm extends Component {
   };
 
   handleSubmit = (event) => {
-    const { originCity, destinationCity, departDateObj } = this.state;
-    if (originCity && destinationCity && departDateObj) {
-      this.props.onClickOnSearch(this.state);
+    const {
+      isOneWay,
+      originCity,
+      destinationCity,
+      departDateObj,
+      returnDateObj,
+    } = this.state;
+
+    const { onClickOnSearch } = this.props;
+
+    if (isOneWay) {
+      if (originCity && destinationCity && departDateObj) {
+        onClickOnSearch({
+          originCity,
+          destinationCity,
+          departDateObj,
+          isOneWay,
+        });
+      }
+    } else {
+      if (originCity && destinationCity && departDateObj && returnDateObj) {
+        onClickOnSearch({
+          originCity,
+          destinationCity,
+          departDateObj,
+          returnDateObj,
+          isOneWay,
+        });
+      }
     }
+
     event.preventDefault();
   };
 

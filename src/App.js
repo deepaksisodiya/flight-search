@@ -13,9 +13,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isOneWay: true,
       originCity: '',
       destinationCity: '',
       departDateObj: '',
+      returnDateObj: '',
       sliderValue: null,
     }
   }
@@ -32,7 +34,8 @@ class App extends Component {
   };
 
   render() {
-    const { originCity, destinationCity, departDateObj, sliderValue } = this.state;
+    console.log('state app ', this.state);
+    const { originCity, destinationCity, departDateObj, returnDateObj, sliderValue, isOneWay } = this.state;
 
     return (
       <div>
@@ -49,6 +52,8 @@ class App extends Component {
               originCity={originCity}
               destinationCity={destinationCity}
               departDateObj={departDateObj}
+              returnDateObj={returnDateObj}
+              isOneWay={isOneWay}
             />
             <div className="flight-details-array">
               <FlightDetailsContainer
