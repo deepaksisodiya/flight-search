@@ -6,8 +6,13 @@
 
 .flight-sub-details-item {
   font-size: 20px;
+  color: #6f6f6f;
 }
 
 .time {
   line-height: 0px;
+}
+
+.flight-number {
+  color: #6f6f6f;
 }

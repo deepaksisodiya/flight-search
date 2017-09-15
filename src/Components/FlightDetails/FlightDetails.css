@@ -1,7 +1,7 @@
 .flight-details-container {
-  border: 1px solid black;
   display: flex;
-  background-color: #f4f6f8;
+  background-color: white;
+  margin: 30px;
 }
 
 .flight-details-subContainer {
@@ -12,6 +12,8 @@
   font-size: 30px;
   margin-top: 10px;
   padding-left: 30px;
+  margin-bottom: 10px;
+  color: #d83d05;
 }
 
 .flight-details-info {
@@ -42,7 +44,7 @@
 
 .btn {
   cursor: pointer;
-  background: #4caf50;
+  background: #d83d05;
   border-radius: 4px;
   color: #ffffff;
   font-size: 20px;
@@ -55,5 +57,5 @@ button:focus {
 }
 
 .btn:hover {
-  background: #4ac24c;
+  background: #d8000f;
 }

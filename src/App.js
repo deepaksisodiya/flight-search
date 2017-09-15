@@ -47,7 +47,6 @@ class App extends Component {
             <SearchForm onClickOnSearch={this.onClickOnSearch} />
             <RangeSlider onChangeComplete={this.onChangeComplete} />
           </div>
-
           <div className="okok">
             <SubHeader
               originCity={originCity}
@@ -56,7 +55,7 @@ class App extends Component {
               returnDateObj={returnDateObj}
               isOneWay={isOneWay}
             />
-            <div className="flight-details-array">
+            <div className="available-flights">
               <AvailableFlights
                 originCity={originCity}
                 destinationCity={destinationCity}

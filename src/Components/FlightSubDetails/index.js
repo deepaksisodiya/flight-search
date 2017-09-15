@@ -18,7 +18,7 @@ const FlightSubDetails = props => {
 
   return (
     <div className="flight-sub-details-container">
-      <p>{flightNumber}</p>
+      <p className="flight-number">{flightNumber}</p>
       <p className="flight-sub-details-item">{renderCity()}</p>
       <p className="flight-sub-details-item">Depart: {departTime}</p>
       <p className="flight-sub-details-item time">Arrive: {arriveTime}</p>
