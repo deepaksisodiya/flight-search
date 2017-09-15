@@ -4,7 +4,7 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <div className="Header-container">
+    <div className="header-container">
       <h1>Flight Search Engine</h1>
     </div>
   );

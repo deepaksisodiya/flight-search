@@ -1,6 +1,7 @@
-.Header-container {
+.header-container {
   display: flex;
   border: 1px solid black;
   padding-left: 4vh;
-  background-color: antiquewhite;
+  background-color: white;
+  color: #212b35;
 }

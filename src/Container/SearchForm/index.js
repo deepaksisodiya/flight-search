@@ -82,7 +82,7 @@ export default class SearchForm extends Component {
 
   renderForm = isOneWay => {
     return (
-      <div className="container">
+      <div className="search-form-container">
         <input
           className="form-input"
           name="originCity"
