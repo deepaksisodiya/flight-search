@@ -21,6 +21,7 @@ export default class SearchForm extends Component {
       originCity: '',
       destinationCity: '',
       departDateObj: '',
+      returnDateObj: '',
     }
   }
 
@@ -38,6 +39,12 @@ export default class SearchForm extends Component {
     });
   };
 
+  handleDatePickerReturn = (date) => {
+    this.setState({
+      returnDateObj:date,
+    });
+  };
+
   handleSubmit = (event) => {
     const { originCity, destinationCity, departDateObj } = this.state;
     if (originCity && destinationCity && departDateObj) {
@@ -49,22 +56,6 @@ export default class SearchForm extends Component {
   renderForm = (isOneWay) => {
     return (
       <div className="container">
-        <div className="date-container">
-          <DatePicker
-            selected={this.state.departDateObj}
-            onChange={this.handleDatePicker}
-            placeholderText="Departure Date"
-            className="date-picker"
-          />
-        </div>
-        { isOneWay === false && <div className="date-container">
-          <DatePicker
-            selected={this.state.departDateObj}
-            onChange={this.handleDatePicker}
-            placeholderText="Departure Date"
-            className="date-picker"
-          />
-        </div>}
         <input
           className="form-input"
           name="originCity"
@@ -81,6 +72,22 @@ export default class SearchForm extends Component {
           onChange={this.handleChange}
           placeholder="Enter Destination City"
         />
+        <div className="date-container">
+          <DatePicker
+            selected={this.state.departDateObj}
+            onChange={this.handleDatePicker}
+            placeholderText="Departure Date"
+            className="date-picker"
+          />
+        </div>
+        { isOneWay === false && <div className="date-container">
+          <DatePicker
+            selected={this.state.returnDateObj}
+            onChange={this.handleDatePickerReturn}
+            placeholderText="Return Date"
+            className="date-picker"
+          />
+        </div>}
         <button onClick={this.handleSubmit} className="btn">
           Search
         </button>
