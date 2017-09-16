@@ -23,6 +23,10 @@ const SubHeader = props => {
     return null;
   };
 
+  /**
+   * format moment date object to '20/09/2017'
+   * @param {object} dateObj
+   */
   const formatDate = dateObj => {
     return dateObj.format('Do MMM YYYY');
   };

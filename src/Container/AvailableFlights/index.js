@@ -33,6 +33,10 @@ export default class AvailableFlights extends Component {
     this.getAvailableFlights(newProps);
   }
 
+  /**
+   * filter the data from json bases on search
+   * @param {object} newProps
+   */
   getAvailableFlights = newProps => {
     const departDate = moment(newProps.departDateObj).format('DD/MM/YYYY');
     const returnDate = moment(newProps.returnDateObj).format('DD/MM/YYYY');

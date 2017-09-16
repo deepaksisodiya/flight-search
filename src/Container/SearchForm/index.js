@@ -25,6 +25,10 @@ export default class SearchForm extends Component {
     };
   }
 
+  /**
+   * on change function on input element
+   * @param {string} event
+   */
   handleChange = event => {
     const target = event.target;
     const name = target.name;
@@ -33,18 +37,30 @@ export default class SearchForm extends Component {
     });
   };
 
+  /**
+   * on change function for depart time date picker
+   * @param {object} date - moment object.
+   */
   handleDatePicker = date => {
     this.setState({
       departDateObj: date
     });
   };
 
+  /**
+   * on change function for return time date picker
+   * @param {object} date - moment object.
+   */
   handleDatePickerReturn = date => {
     this.setState({
       returnDateObj: date
     });
   };
 
+  /**
+   * this function trigger on search button click
+   * @param {object} date - moment object.
+   */
   handleSubmit = event => {
     const {
       isOneWay,
@@ -124,6 +140,10 @@ export default class SearchForm extends Component {
     );
   };
 
+  /**
+   * trigger on select any tab
+   * @param {number} tabIndex
+   */
   onSelectTab = tabIndex => {
     this.setState(prevState => {
       return {

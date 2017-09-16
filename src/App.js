@@ -18,6 +18,10 @@ class App extends Component {
     };
   }
 
+  /**
+   * This function gets call when user click on search button
+   * @param {object} data - form data.
+   */
   onClickOnSearch = data => {
     this.setState({
       ...data,
@@ -25,6 +29,10 @@ class App extends Component {
     });
   };
 
+  /**
+   * This function gets call on complete of slider range
+   * @param {string} sliderValue - value of slider.
+   */
   onChangeComplete = sliderValue => {
     this.setState({ sliderValue });
   };

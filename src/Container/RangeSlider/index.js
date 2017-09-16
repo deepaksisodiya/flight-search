@@ -14,12 +14,19 @@ export default class RangeSlider extends Component {
     sliderValue: 0
   };
 
+  /**
+   * on change event of slider
+   * @param {number} value
+   */
   handleOnChange = value => {
     this.setState({
       sliderValue: value
     });
   };
 
+  /**
+   * on complete change event of slider
+   */
   onChangeComplete = () => {
     this.props.onChangeComplete(this.state.sliderValue);
   };
