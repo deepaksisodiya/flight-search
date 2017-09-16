@@ -91,6 +91,7 @@ export default class AvailableFlights extends Component {
 
   renderFlightDetails = () => {
     const { flightDetailsArr } = this.state;
+    const { isOneWay } = this.props;
     let arr;
 
     if (this.props.isOneWay) {
@@ -99,7 +100,7 @@ export default class AvailableFlights extends Component {
           <FlightDetails
             key={index}
             price={obj.price}
-            isOneWay={this.props.isOneWay}
+            isOneWay={isOneWay}
             gFlightNumber={obj.flightNumber}
             originCityCode={obj.originCityCode}
             destinationCityCode={obj.destinationCityCode}
@@ -114,7 +115,7 @@ export default class AvailableFlights extends Component {
           <FlightDetails
             key={index}
             price={obj.price}
-            isOneWay={this.props.isOneWay}
+            isOneWay={isOneWay}
             gFlightNumber={obj.gFlightNumber}
             rFlightNumber={obj.rFlightNumber}
             originCityCode={obj.originCityCode}

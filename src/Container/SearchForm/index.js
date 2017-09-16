@@ -97,13 +97,20 @@ export default class SearchForm extends Component {
   };
 
   renderForm = isOneWay => {
+    const {
+      originCity,
+      destinationCity,
+      departDateObj,
+      returnDateObj
+    } = this.state;
+
     return (
       <div className="search-form-container">
         <input
           className="form-input"
           name="originCity"
           type="text"
-          value={this.state.originCity}
+          value={originCity}
           onChange={this.handleChange}
           placeholder="Enter Origin City"
         />
@@ -111,13 +118,13 @@ export default class SearchForm extends Component {
           className="form-input"
           name="destinationCity"
           type="text"
-          value={this.state.destinationCity}
+          value={destinationCity}
           onChange={this.handleChange}
           placeholder="Enter Destination City"
         />
         <div className="date-container">
           <DatePicker
-            selected={this.state.departDateObj}
+            selected={departDateObj}
             onChange={this.handleDatePicker}
             placeholderText="Departure Date"
             className="date-picker"
@@ -126,7 +133,7 @@ export default class SearchForm extends Component {
         {isOneWay === false && (
           <div className="date-container">
             <DatePicker
-              selected={this.state.returnDateObj}
+              selected={returnDateObj}
               onChange={this.handleDatePickerReturn}
               placeholderText="Return Date"
               className="date-picker"
@@ -154,10 +161,10 @@ export default class SearchForm extends Component {
   };
 
   render() {
-    const { isOneWay } = this.state;
+    const { isOneWay, tabIndex } = this.state;
 
     return (
-      <Tabs selectedIndex={this.state.tabIndex} onSelect={this.onSelectTab}>
+      <Tabs selectedIndex={tabIndex} onSelect={this.onSelectTab}>
         <TabList>
           <Tab>One Way</Tab>
           <Tab>Return</Tab>

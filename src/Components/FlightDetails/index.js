@@ -62,11 +62,11 @@ FlightDetails.propTypes = {
   gFlightNumber: PropTypes.string.isRequired,
   rFlightNumber: PropTypes.string,
   rArriveTime: PropTypes.string,
-  rDetaprtTime: PropTypes.string
+  rDepartTime: PropTypes.string
 };
 
 FlightSubDetails.defaultProps = {
-  rDetaprtTime: '',
+  rDepartTime: '',
   rArriveTime: '',
   rFlightNumber: ''
 };
