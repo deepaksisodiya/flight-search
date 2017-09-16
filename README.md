@@ -1,5 +1,9 @@
 # Flight Search Engine
 
+## Technologies
+
+* [React](https://facebook.github.io/react/index.html) - A Javascript Library For Building User Interfaces
+
 ## How to setup
 
 ```
