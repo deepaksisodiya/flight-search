@@ -7,7 +7,6 @@
 ## How to setup
 
 ```
-git clone some URL
 npm install
 ```
 
