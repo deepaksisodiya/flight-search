@@ -7,6 +7,7 @@
 ## How to setup
 
 ```
+git clone https://github.com/deepaksisodiya/flight-search.git
 npm install
 ```
 
