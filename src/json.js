@@ -1,7 +1,7 @@
 const oneWayJson = [
   {
     flightNumber: 'AI-202',
-    price: 9000,
+    price: 5000,
     originCity: 'Pune',
     destinationCity: 'Delhi',
     originCityCode: 'PNQ',
@@ -12,7 +12,7 @@ const oneWayJson = [
   },
   {
     flightNumber: 'AI-203',
-    price: 8000,
+    price: 4000,
     originCity: 'Pune',
     destinationCity: 'Delhi',
     originCityCode: 'PNQ',
@@ -23,7 +23,7 @@ const oneWayJson = [
   },
   {
     flightNumber: 'AI-204',
-    price: 7000,
+    price: 3000,
     originCity: 'Pune',
     destinationCity: 'Delhi',
     originCityCode: 'PNQ',
@@ -36,7 +36,7 @@ const oneWayJson = [
 
 const twoWayJson = [
   {
-    price: 9500,
+    price: 7000,
     originCity: 'Pune',
     destinationCity: 'Delhi',
     departDate: '20/09/2017',
@@ -52,7 +52,7 @@ const twoWayJson = [
     destinationCityCode: 'DEL'
   },
   {
-    price: 15000,
+    price: 8000,
     originCity: 'Pune',
     destinationCity: 'Delhi',
     departDate: '20/09/2017',
@@ -68,7 +68,7 @@ const twoWayJson = [
     destinationCityCode: 'DEL'
   },
   {
-    price: 16000,
+    price: 9000,
     originCity: 'Pune',
     destinationCity: 'Delhi',
     departDate: '20/09/2017',
